@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Table, Button, Alert } from "react-bootstrap";
+import { Container, Row, Col, Table, Alert } from "react-bootstrap";
 import axios from 'axios';
 
 const ListarPlanillas = () => {
-    const [showAlert, setShowAlert] = useState(false);
-    const [messageAlert, setMessageAlert] = useState('');
+    // const [showAlert, setShowAlert] = useState(false);
+    const showAlert= useState(false);
+    // const [messageAlert, setMessageAlert] = useState('');
+    const messageAlert = useState('');
     const [planillas, setPlanillas] = useState([]);
 
     const obtenerPlanillas = async () => {
@@ -19,20 +21,6 @@ const ListarPlanillas = () => {
         }
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // const user = {
-        //   name: this.state.name
-        // }
-
-        axios.get('http://localhost:8082/planilla/calcularPlanilla/all')
-          .then(res=>{
-            console.log(res);
-            console.log(res.data);
-            window.location = "/planilla/all" //This line of code will redirect you once the submission is succeed
-          })
-    }
-
     useEffect(() => {
         obtenerPlanillas();
     }, []);
@@ -44,11 +32,11 @@ const ListarPlanillas = () => {
                     <h1>Listado de planillas</h1>
                 </Col>
             </Row>
-            <Row>
+            {/* <Row>
                 <Col lg="3" sm="4">
                     <Button onClick={handleSubmit}> Calcular Planillas </Button>
                 </Col>
-            </Row>
+            </Row> */}
             <Row className="mt-2">
                 <Col lg="3" sm="4">
                 </Col>

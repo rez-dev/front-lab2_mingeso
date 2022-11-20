@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-const AgregarAutorizacion3 = () => {
+const AgregarAutorizacion = () => {
     const [autorizacion, setAutorizacion] = useState({
         estado: '',
         rut_empleado_autorizacion: ''
@@ -38,38 +38,6 @@ const AgregarAutorizacion3 = () => {
             window.location = "/autorizacion/all" //This line of code will redirect you once the submission is succeed
           })
     }
-
-    const handleUpload = (e) => {
-        e.preventDefault();
-
-        let url = 'http://localhost:8082/autorizacion';
-
-        setAutorizacion({
-            ...autorizacion,
-            [e.target.name]: e.target.value
-        });
-
-        axios.post(url, autorizacion);
-    }
-
-    const saveBook = (e) => {
-        e.preventDefault();
-        setAutorizacion({
-            ...autorizacion,
-            [e.target.name]: e.target.value
-        });
-
-        axios.post("http://localhost:8082/autorizacion", autorizacion);
-    }
-
-    const enviarDatos = (event) => {
-        event.preventDefault();
-        console.log(autorizacion.estado + ' - ' + autorizacion.rut_empleado_autorizacion);
-    }
-    
-
-
-
 
     return (
         <Container style={{marginTop: '70px'}}>
@@ -124,4 +92,4 @@ const AgregarAutorizacion3 = () => {
     );
 }
 
-export default AgregarAutorizacion3;
+export default AgregarAutorizacion;

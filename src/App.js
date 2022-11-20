@@ -8,13 +8,12 @@ import ListarAutorizaciones from './pages/ListarAutorizaciones';
 import ListarJustificaciones from './pages/ListarJustificaciones';
 import ListarEmpleados from './pages/ListarEmpleados';
 import ListarRelojes from './pages/ListarRelojes';
-import AgregarAutorizacion1 from './pages/AgregarAutorizacion1';
-import AgregarAutorizacion2 from './pages/AgregarAutorizacion2';
-import AgregarAutorizacion3 from './pages/AgregarAutorizacion3';
+import AgregarAutorizacion from './pages/AgregarAutorizacion';
 import SubirReloj from './pages/SubirReloj';
 import AgregarJustificacion from './pages/AgregarJustificacion';
-// import NewAgregarAutorizacion from './pages/NewAgregarAutorizacion';
-// import Test2 from './pages/Test2';
+import MenuPlanilla from './pages/MenuPlanilla';
+import MenuAutorizacion from './pages/MenuAutorizacion';
+import MenuJustificacion from './pages/MenuJustificacion';
 
 function App() {
   return (
@@ -27,13 +26,13 @@ function App() {
           <Route path='/justificacion/all' element={<ListarJustificaciones />}exact/>
           <Route path='/empleado/all' element={<ListarEmpleados />}exact/>
           <Route path='/reloj/all' element={<ListarRelojes />}exact/>
-          <Route path='/autorizacion/agregar' element={<AgregarAutorizacion1 />}exact/>
-          {/* <Route path='/autorizacion/agregar2' element={<AgregarAutorizacion2 />}exact/> */}
-          <Route path='/autorizacion/agregar3' element={<AgregarAutorizacion3 />}exact/>
+          <Route path='/autorizacion/agregar' element={<AgregarAutorizacion />}exact/>
           <Route path='/justificacion/agregar' element={<AgregarJustificacion />}exact/>
           <Route path='/reloj/agregar' element={<SubirReloj />} exact/>
-          {/* <Route path='/test' element={<NewAgregarAutorizacion />} exact/>
-          <Route path='/test2' component={<Test2 />} exact/> */}
+
+          <Route path='/planilla/menu' element={<MenuPlanilla />} exact/>
+          <Route path='/autorizacion/menu' element={<MenuAutorizacion />} exact/>
+          <Route path='/justificacion/menu' element={<MenuJustificacion />} exact/>
         </Routes>
       </Container>
     </Layout>
