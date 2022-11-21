@@ -3,10 +3,10 @@ import { Container, Row, Col, Table, Alert } from "react-bootstrap";
 import axios from 'axios';
 
 const ListarPlanillas = () => {
-    // const [showAlert, setShowAlert] = useState(false);
-    const showAlert= useState(false);
-    // const [messageAlert, setMessageAlert] = useState('');
-    const messageAlert = useState('');
+    const [showAlert, setShowAlert] = useState(false);
+    // const showAlert= useState(false);
+    const [messageAlert, setMessageAlert] = useState('');
+    // const messageAlert = useState('');
     const [planillas, setPlanillas] = useState([]);
 
     const obtenerPlanillas = async () => {
