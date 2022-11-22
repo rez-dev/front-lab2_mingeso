@@ -16,10 +16,10 @@ const MenuAutorizacion = () => {
             </Row>
             <Row>
                 <Col lg="3" sm="4">
-                    <Button href="/autorizacion/all"> Listar autorizaciones </Button>
-                    <br></br>
-                    <br></br>
                     <Button href="/autorizacion/agregar"> Agregar autorización </Button>
+                    <br></br>
+                    <br></br>
+                    <Button href="/autorizacion/all"> Listar autorizaciones </Button>
                 </Col>
             </Row>
         </Container>

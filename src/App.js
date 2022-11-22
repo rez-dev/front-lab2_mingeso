@@ -14,13 +14,14 @@ import AgregarJustificacion from './pages/AgregarJustificacion';
 import MenuPlanilla from './pages/MenuPlanilla';
 import MenuAutorizacion from './pages/MenuAutorizacion';
 import MenuJustificacion from './pages/MenuJustificacion';
+import Login from './pages/Login';
 
 function App() {
   return (
     <Layout>
       <Container>
         <Routes>
-          <Route path='/' element={<Index />} exact/>
+          {/* <Route path='/' element={<Index />} exact/> */}
           <Route path='/planilla/all' element={<ListarPlanillas />}exact/>
           <Route path='/autorizacion/all' element={<ListarAutorizaciones />}exact/>
           <Route path='/justificacion/all' element={<ListarJustificaciones />}exact/>
@@ -33,6 +34,8 @@ function App() {
           <Route path='/planilla/menu' element={<MenuPlanilla />} exact/>
           <Route path='/autorizacion/menu' element={<MenuAutorizacion />} exact/>
           <Route path='/justificacion/menu' element={<MenuJustificacion />} exact/>
+
+          <Route path='/login' element={<Login />} exact/>
         </Routes>
       </Container>
     </Layout>

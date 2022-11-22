@@ -9,10 +9,14 @@ const ListarPlanillas = () => {
     // const messageAlert = useState('');
     const [planillas, setPlanillas] = useState([]);
 
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.jwtToken}` }
+    };
+
     const obtenerPlanillas = async () => {
         try {
             let url = 'http://localhost:8082/planilla/all';
-            let response = await axios.get(url);
+            let response = await axios.get(url,config);
             if (response.status === 200) {
                 setPlanillas(response.data);
             }

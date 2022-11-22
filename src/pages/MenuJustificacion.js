@@ -16,10 +16,10 @@ const MenuJustificacion = () => {
             </Row>
             <Row>
                 <Col lg="3" sm="4">
+                    <Button href="/justificacion/agregar"> Agregar justificación </Button>                    
+                    <br></br>
+                    <br></br>
                     <Button href="/justificacion/all"> Listar justificaciones </Button>
-                    <br></br>
-                    <br></br>
-                    <Button href="/justificacion/agregar"> Agregar justificación </Button>
                 </Col>
             </Row>
         </Container>

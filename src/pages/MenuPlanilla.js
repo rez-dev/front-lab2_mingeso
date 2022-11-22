@@ -4,17 +4,29 @@ import { Row , Button} from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import React from 'react';
 import axios from 'axios';
+import authToken from "./utils/AuthToken";
 
 const MenuPlanilla = () => {
 
-    const handleSubmit = (event) => {
+    if(localStorage.jwtToken) {
+        console.log(localStorage.jwtToken);
+        authToken(localStorage.jwtToken);
+    }
+    
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.jwtToken}` }
+    };
+    
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        axios.get('http://localhost:8082/planilla/calcularPlanilla/all')
+        axios.get('http://localhost:8082/planilla/calcularPlanilla/all',config)
           .then(res=>{
             console.log(res);
             console.log(res.data);
-            window.location = "/planilla/all" //This line of code will redirect you once the submission is succeed
+            // window.location = "/planilla/all" //This line of code will redirect you once the submission is succeed
           })
+        window.location = "/planilla/all"
     }
 
     return (
